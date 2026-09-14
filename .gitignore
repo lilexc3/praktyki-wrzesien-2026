@@ -1,0 +1,7 @@
+/config/local.php
+*.log
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
+OBRONA.md
