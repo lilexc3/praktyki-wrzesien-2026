@@ -8,3 +8,5 @@ Instalacja: skopiuj katalog do htdocs, zaimportuj database/baza.sql
 i ustaw polaczenie w config/database.php. Importuj do nowej bazy.
 
 Wspolne funkcje i przygotowane zapytania SQL: includes/functions.php.
+
+Wejscie do aplikacji: index.php. Uklad stron: katalog includes.

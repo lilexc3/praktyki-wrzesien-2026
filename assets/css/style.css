@@ -1,0 +1,8 @@
+body { margin: 0; font-family: Arial, sans-serif; color: #222; background: #fff; }
+a { color: #174a8b; }
+.sidebar { padding: 20px; background: #eef2f7; }
+.nav-link { display: block; padding: 8px; }
+.workspace { padding: 20px; }
+.panel { padding: 16px; border: 1px solid #ddd; }
+.icon { width: 20px; height: 20px; }
+.button { padding: 8px 16px; }
