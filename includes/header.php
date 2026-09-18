@@ -32,6 +32,7 @@ if (isset($_SESSION['flash'])) {
     <script src="<?= e(url('assets/js/app.js')) ?>" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
 
     <?php require ROOT . '/includes/sidebar.php'; ?>
 
