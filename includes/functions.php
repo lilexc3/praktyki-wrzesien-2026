@@ -180,3 +180,5 @@ function icon($name, $class = '') {
     return '<svg class="icon ' . e($class) . '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . ($paths[$name] ?? $paths['file']) . '</svg>';
 
 }
+require_once __DIR__ . '/exam_search.php';
+
