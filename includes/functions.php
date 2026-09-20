@@ -22,6 +22,13 @@ function e($value) {
 }
 
 // Zwraca datę weryfikacji albo prostą informację, gdy daty jeszcze nie ma.
+function verification_date($date) {
+    if ($date === null || $date === '') {
+        return 'Jeszcze nie zweryfikowano';
+    }
+
+    return $date;
+}
 function input($key, $data = null) {
     if ($data === null) {
         $data = $_GET;
@@ -180,5 +187,51 @@ function icon($name, $class = '') {
     return '<svg class="icon ' . e($class) . '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . ($paths[$name] ?? $paths['file']) . '</svg>';
 
 }
+function filters($fixed = []) {
+    $result = [];
+    $filterNames = ['q', 'qualification', 'year', 'session', 'type', 'number'];
+
+    foreach ($filterNames as $name) {
+        if (isset($fixed[$name])) {
+            $result[$name] = $fixed[$name];
+        } else {
+            $result[$name] = input($name);
+        }
+    }
+
+    $result['q'] = mb_substr($result['q'], 0, 150);
+
+    $yearIsInvalid = $result['year'] !== '' && (!ctype_digit($result['year']) || (int)$result['year'] < 2000 || (int)$result['year'] > 2100);
+
+    if ($yearIsInvalid) {
+        $result['year'] = '';
+    }
+
+    if (!in_array($result['session'], ['', 'styczeń', 'czerwiec', 'lipiec'], true)) {
+        $result['session'] = '';
+    }
+
+    if (!in_array($result['type'], ['', 'teoretyczny', 'praktyczny'], true)) {
+        $result['type'] = '';
+    }
+
+    if ($result['qualification'] !== '' && !ctype_digit((string)$result['qualification'])) {
+        $result['qualification'] = '';
+    }
+
+    $result['number'] = mb_substr($result['number'], 0, 20);
+
+    return $result;
+
+}
 require_once __DIR__ . '/exam_search.php';
+
+function selected($currentValue, $optionValue) {
+    if ((string)$currentValue === (string)$optionValue) {
+        return ' selected';
+    }
+
+    return '';
+}
+require_once __DIR__ . '/pagination.php';
 

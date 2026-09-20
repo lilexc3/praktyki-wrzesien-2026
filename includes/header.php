@@ -26,6 +26,7 @@ if (isset($_SESSION['flash'])) {
     <title><?= e($title) ?> • EGZAMIN-ARCHIWUM ZSM3</title>
     <link rel="icon" href="<?= e(url('assets/img/zsm3.png')) ?>" type="image/png">
     <link rel="stylesheet" href="<?= e(url('assets/css/style.css')) ?>">
+    <link rel="stylesheet" href="<?= e(url('assets/css/tables.css')) ?>">
 
 
 

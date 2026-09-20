@@ -83,5 +83,15 @@ $qualificationCount = query('SELECT COUNT(*) FROM qualifications')->fetch_row()[
 </a><?php endforeach;
  ?></div>
 </section>
+<section class="panel latest">
+<div class="section-heading">
+<div>
+<h2>Najnowsze arkusze</h2>
+<p>Materiały uporządkowane według roku i sesji.</p>
+</div>
+<a class="text-link" href="<?= e(url('serwis/search.php')) ?>">Zobacz wszystkie <?= icon('arrow') ?></a>
+</div><?php $exams=find_exams([],6);
+ require ROOT . '/includes/exam_table.php';
+ ?></section>
 <?php require ROOT . '/includes/footer.php';
  ?>

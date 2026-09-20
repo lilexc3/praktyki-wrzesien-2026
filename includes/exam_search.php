@@ -5,6 +5,7 @@ function find_exams($filters, $limit = 20, $offset = 0, $count = false) {
     $params = [];
     $filterColumns = [
         'qualification' => 'qualification_id',
+        'year' => 'year',
     ];
 
     // Te nazwy kolumn pochodzą z kodu, nie z adresu URL.
