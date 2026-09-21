@@ -45,6 +45,13 @@ if (isset($_SESSION['flash'])) {
 
             <span class="topbar-label"><?= $topbarLabel ?></span>
 
+            <form class="top-search" action="<?= e(url('serwis/search.php')) ?>">
+                <label class="sr-only" for="top-q">Szukaj materiałów</label>
+                <?= icon('search') ?>
+                <input id="top-q" name="q" placeholder="Szukaj kwalifikacji, symbolu, arkusza…"
+                    value="<?= e(input('q')) ?>">
+                <button aria-label="Szukaj">↵</button>
+            </form>
 
             <span class="local-status"><i></i> Serwis lokalny</span>
             <img class="avatar" src="<?= e(url('assets/img/zsm3.png')) ?>" alt="Zespół Szkół Mechanicznych nr 3" width="42" height="42">

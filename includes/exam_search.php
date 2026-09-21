@@ -6,6 +6,9 @@ function find_exams($filters, $limit = 20, $offset = 0, $count = false) {
     $filterColumns = [
         'qualification' => 'qualification_id',
         'year' => 'year',
+        'session' => 'session',
+        'type' => 'exam_type',
+        'number' => 'exam_number',
     ];
 
     // Te nazwy kolumn pochodzą z kodu, nie z adresu URL.
@@ -18,6 +21,14 @@ function find_exams($filters, $limit = 20, $offset = 0, $count = false) {
 
         $conditions[] = 'e.' . $columnName . ' = ?';
         $params[] = $value;
+    }
+
+    $searchText = $filters['q'] ?? '';
+    $words = preg_split('/\s+/u', $searchText, -1, PREG_SPLIT_NO_EMPTY);
+
+    foreach ($words as $word) {
+        $conditions[] = "CONCAT_WS(' ', a.name, q.symbol, q.name, e.year, e.session, e.exam_type, e.exam_number, e.title) LIKE ?";
+        $params[] = '%' . str_replace(['\\','%','_'], ['\\\\','\\%','\\_'], $word) . '%';
     }
 
     if ($count) {
