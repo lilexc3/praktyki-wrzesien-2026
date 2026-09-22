@@ -21,7 +21,7 @@ if (!isset($exams)) {
                     <th>Rodzaj</th>
                     <th>Rok / sesja</th>
                     <th>Źródło / weryfikacja</th>
-                    <th>Materiał</th>
+                    <th>Pliki</th>
                 </tr>
             </thead>
             <tbody>
@@ -61,7 +61,7 @@ if (!isset($exams)) {
                         </td>
                         <td>
                             <div class="file-actions">
-                                <a href="<?= e($materialUrl) ?>">Szczegóły</a>
+                                <?php file_buttons($exam); ?>
                             </div>
                         </td>
                     </tr>
