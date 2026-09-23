@@ -123,6 +123,24 @@ function show_error($error) {
 
 set_exception_handler('show_error');
 
+function csrf() {
+    if (!isset($_SESSION['csrf'])) {
+        $_SESSION['csrf'] = bin2hex(random_bytes(32));
+    }
+
+    return '<input type="hidden" name="csrf" value="' . e($_SESSION['csrf']) . '">';
+
+}
+function check_csrf() {
+    if (!hash_equals($_SESSION['csrf'] ?? '', input('csrf', $_POST)) || empty($_SESSION['csrf'])) {
+        http_response_code(403);
+ exit('Sesja formularza wygasła. Wróć do strony i spróbuj ponownie.');
+
+    }
+}
+function flash($message) {
+    $_SESSION['flash'] = $message;
+}
 function not_found($message = 'Nie znaleziono strony.') {
     http_response_code(404);
  $title = 'Nie znaleziono';

@@ -63,6 +63,27 @@ $adminIsLoggedIn = $adminPage && isset($_SESSION['admin_id']);
         <?php endforeach; ?>
     </nav>
 
+    <?php if ($adminIsLoggedIn): ?>
+        <div class="sidebar-caption divider">ADMINISTRACJA</div>
+        <nav aria-label="Administracja">
+            <?php foreach ($adminPages as $adminNavigationPage): ?>
+                <?php $adminUrl = url('admin/' . $adminNavigationPage['file'] . '.php'); ?>
+                <a class="nav-link" href="<?= e($adminUrl) ?>">
+                    <?= icon('grid') ?>
+                    <?= e($adminNavigationPage['label']) ?>
+                </a>
+            <?php endforeach; ?>
+
+            <form action="<?= e(url('admin/logout.php')) ?>" method="post">
+                <?= csrf() ?>
+                <button class="nav-link">
+                    <?= icon('arrow') ?>
+                    Wyloguj się
+                </button>
+            </form>
+        </nav>
+    <?php endif; ?>
+
     <div class="sidebar-bottom">
         <div class="offline-card">
             <?= icon('shield') ?>
@@ -70,6 +91,10 @@ $adminIsLoggedIn = $adminPage && isset($_SESSION['admin_id']);
             <p>Wszystkie zapisane pliki masz pod ręką. Także bez internetu.</p>
         </div>
 
+        <a class="nav-link" href="<?= e(url('admin/')) ?>">
+            <?= icon('gear') ?>
+            Panel administratora
+        </a>
 
         <small>PROJEKT PRAKTYK ZAWODOWYCH<br>ZSM3 · Archiwum egzaminów</small>
     </div>

@@ -28,7 +28,9 @@ if (isset($_SESSION['flash'])) {
     <link rel="stylesheet" href="<?= e(url('assets/css/style.css')) ?>">
     <link rel="stylesheet" href="<?= e(url('assets/css/tables.css')) ?>">
 
-
+    <?php if ($adminPage): ?>
+        <link rel="stylesheet" href="<?= e(url('assets/css/login.css')) ?>">
+    <?php endif; ?>
 
     <script src="<?= e(url('assets/js/app.js')) ?>" defer></script>
 </head>

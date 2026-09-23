@@ -1,0 +1,20 @@
+.login-panel {
+    max-width:430px;
+    margin:45px auto;
+    padding:35px
+}
+
+.login-panel .brand-icon {
+    display:block;
+    margin-bottom:20px
+}
+
+.login-panel label {
+    margin:18px 0
+}
+
+.login-panel .button {
+    width:100%;
+    margin-top:10px
+}
+
