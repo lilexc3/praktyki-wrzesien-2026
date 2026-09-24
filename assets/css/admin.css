@@ -1,0 +1,126 @@
+.admin-stats {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-bottom:25px
+}
+
+.admin-stats .panel {
+    margin:0
+}
+
+.admin-stats strong {
+    display:block;
+    font-size:32px;
+    margin-top:10px
+}
+
+.admin-stats .icon {
+    color:var(--blue)
+}
+
+.form-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px
+}
+
+.form-grid .wide {
+    grid-column:1/-1
+}
+
+.form-row {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px
+}
+
+textarea {
+    min-height:125px;
+    resize:vertical
+}
+
+.form-actions {
+    display:flex;
+    gap:10px;
+    margin-top:25px;
+    padding-top:22px;
+    border-top:1px solid var(--line)
+}
+
+.field-note {
+    display:block;
+    font-size:11px;
+    color:var(--muted);
+    font-weight:400;
+    margin-top:6px
+}
+
+.upload-box {
+    border:1px dashed #c7d4e5;
+    border-radius:9px;
+    background:#f8faff;
+    padding:18px;
+    margin-bottom:18px
+}
+
+.upload-box input {
+    background:white;
+    font-size:11px
+}
+
+.check {
+    display:flex;
+    gap:8px;
+    align-items:center;
+    margin:12px 0
+}
+
+.check input {
+    width:auto;
+    min-height:0;
+    margin:0
+}
+
+.login-panel {
+    max-width:430px;
+    margin:45px auto;
+    padding:35px
+}
+
+.login-panel .brand-icon {
+    display:block;
+    margin-bottom:20px
+}
+
+.login-panel label {
+    margin:18px 0
+}
+
+.login-panel .button {
+    width:100%;
+    margin-top:10px
+}
+
+.actions {
+    display:flex;
+    gap:10px;
+    white-space:nowrap
+}
+
+.actions a {
+    color:var(--blue)
+}
+
+.actions a.delete {
+    color:#d63f4e
+}
+
+.admin-intro {
+    margin:20px 0 30px
+}
+
+.admin-intro p {
+    max-width:700px
+}
+
