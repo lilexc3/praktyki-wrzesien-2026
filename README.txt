@@ -14,3 +14,6 @@ Wejscie do aplikacji: index.php. Uklad stron: katalog includes.
 Wyszukiwanie: wpisz symbol i rok, np. INF.03 2025; dostepne sa filtry sesji i rodzaju.
 
 Panel: admin/login.php. Po instalacji zmien domyslne haslo.
+
+Pliki dodaje sie w formularzu arkusza. Katalog uploads musi byc zapisywalny.
+Limit pojedynczego pliku: 20 MB.

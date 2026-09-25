@@ -205,8 +205,57 @@ function icon($name, $class = '') {
     return '<svg class="icon ' . e($class) . '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . ($paths[$name] ?? $paths['file']) . '</svg>';
 
 }
-require_once __DIR__ . '/file_buttons.php';
+function local_file($path) {
+    if (!$path || !str_starts_with($path, 'uploads/')) return null;
 
+    $base = realpath(ROOT . '/uploads');
+ $file = realpath(ROOT . '/' . $path);
+
+    if (!$base || !$file || !is_file($file) || !str_starts_with(str_replace('\\','/',$file), str_replace('\\','/',$base) . '/')) return null;
+
+    return $file;
+
+}
+function print_exam_file_button($examId, $kind, $label, $className = '') {
+    $downloadUrl = url('serwis/download.php?exam=' . $examId . '&kind=' . $kind);
+
+    echo '<a class="file-button ' . e($className) . '" href="' . e($downloadUrl) . '">';
+    echo icon('download');
+    echo e($label);
+    echo '</a> ';
+}
+
+function file_buttons($exam) {
+    $pdfFile = local_file($exam['pdf_path'] ?? null);
+
+    if ($pdfFile) {
+        print_exam_file_button($exam['id'], 'pdf', 'Arkusz PDF', 'pdf');
+    } else {
+        echo '<span class="muted small">Plik niedostępny</span> ';
+    }
+
+    $answersFile = local_file($exam['answers_path'] ?? null);
+
+    if ($answersFile) {
+        print_exam_file_button($exam['id'], 'answers', 'Odpowiedzi', 'answers');
+    }
+
+    $additionalFiles = query('SELECT * FROM exam_files WHERE exam_id = ?', [$exam['id']]);
+    $additionalFiles = $additionalFiles->fetch_all(MYSQLI_ASSOC);
+
+    foreach ($additionalFiles as $file) {
+        if (!local_file($file['file_path'])) {
+            continue;
+        }
+
+        $downloadUrl = url('serwis/download.php?file=' . $file['id']);
+
+        echo '<a class="file-button" href="' . e($downloadUrl) . '">';
+        echo icon('download');
+        echo e($file['file_name']);
+        echo '</a> ';
+    }
+}
 function filters($fixed = []) {
     $result = [];
     $filterNames = ['q', 'qualification', 'year', 'session', 'type', 'number'];
