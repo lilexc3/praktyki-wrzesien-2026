@@ -13,6 +13,7 @@ if (!isset($exams)) {
         <p>Spróbuj zmienić wyszukiwaną frazę lub wybrać inne filtry.</p>
     </div>
 <?php else: ?>
+    <p class="table-scroll-hint">Przesuń tabelę w poziomie, aby zobaczyć wszystkie kolumny.</p>
     <div class="table-scroll">
         <table>
             <thead>
