@@ -63,6 +63,26 @@ $adminIsLoggedIn = $adminPage && isset($_SESSION['admin_id']);
         <?php endforeach; ?>
     </nav>
 
+    <div class="sidebar-caption divider">WARTO WIEDZIEĆ</div>
+    <nav aria-label="Informacje">
+        <?php foreach ($informationPages as $informationPage): ?>
+            <?php
+            $informationPageFile = $informationPage['file'] . '.php';
+            $informationClass = '';
+
+            if ($currentPage === $informationPageFile) {
+                $informationClass = 'active';
+            }
+
+            $informationUrl = url('serwis/' . $informationPageFile);
+            ?>
+            <a class="nav-link <?= $informationClass ?>" href="<?= e($informationUrl) ?>">
+                <?= icon($informationPage['icon']) ?>
+                <?= e($informationPage['label']) ?>
+            </a>
+        <?php endforeach; ?>
+    </nav>
+
     <?php if ($adminIsLoggedIn): ?>
         <div class="sidebar-caption divider">ADMINISTRACJA</div>
         <nav aria-label="Administracja">

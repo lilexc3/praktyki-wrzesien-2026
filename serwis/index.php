@@ -93,5 +93,13 @@ $qualificationCount = query('SELECT COUNT(*) FROM qualifications')->fetch_row()[
 </div><?php $exams=find_exams([],6);
  require ROOT . '/includes/exam_table.php';
  ?></section>
+<section class="help-banner">
+<div><?= icon('book') ?><span>
+<strong>Pierwszy raz w archiwum?</strong>
+<small>Sprawdź, jak szukać materiałów i przygotować się do egzaminu.</small>
+</span>
+</div>
+<a href="<?= e(url('serwis/help.php')) ?>">Poznaj serwis <?= icon('arrow') ?></a>
+</section>
 <?php require ROOT . '/includes/footer.php';
  ?>
