@@ -17,3 +17,5 @@ Panel: admin/login.php. Po instalacji zmien domyslne haslo.
 
 Pliki dodaje sie w formularzu arkusza. Katalog uploads musi byc zapisywalny.
 Limit pojedynczego pliku: 20 MB.
+
+Dane startowe zawieraja demonstracje oraz rzeczywiste arkusze CKE.
