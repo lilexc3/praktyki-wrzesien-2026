@@ -27,6 +27,10 @@
 <p>Otwórz „Panel administratora” i zaloguj się. W zakładce „Arkusze” wybierz „Dodaj arkusz”, uzupełnij opis, kwalifikację, rok, sesję i źródło. Przeczytaj pliki przed dodaniem i podaj rzeczywistą datę sprawdzenia. PDF i odpowiedzi przyjmują PDF; załączniki także ZIP, RAR, 7Z, DOC, DOCX, XLS i XLSX. Limit: 20 MB na plik. Przy edycji można wymienić i usunąć pliki. Po pierwszym logowaniu zmień hasło.</p>
 </details>
 <details>
+<summary>Przenoszenie i kopia zapasowa</summary>
+<p>Skopiuj cały folder projektu razem z uploads. Wyeksportuj aktualną bazę w phpMyAdmin. Na nowym komputerze uruchom Apache i MySQL, zaimportuj kopię bazy i ustaw dane połączenia w config/database.php. Pełna instrukcja znajduje się w README.txt.</p>
+</details>
+<details>
 <summary>Brak wyników lub problem z połączeniem</summary>
 <p>Usuń część filtrów lub użyj samego symbolu kwalifikacji. Przy błędzie bazy sprawdź, czy działa MySQL i czy zaimportowano baza.sql. Problemy z plikami zgłoś administratorowi. Strony źródłowe wymagają internetu, ale lokalne pliki nie.</p>
 </details>
