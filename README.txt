@@ -7,10 +7,7 @@ Lokalna aplikacja PHP z bazą MySQL/MariaDB, wyszukiwarką, filtrami,
 stronami kwalifikacji, pobieraniem plików i panelem administratora.
 Interfejs nie korzysta z CDN, zewnętrznych fontów ani bibliotek JavaScript.
 
-W bazie jest 5 obszarów i 19 kwalifikacji. Polecenie szkolne podaje liczbę 18,
-ale wymienia 19 symboli (3 + 4 + 5 + 5 + 2). Zachowano wszystkie symbole.
-Pełne nazwy ELM.07, ELM.08, MOT.07 i nowych kwalifikacji lotniczych uzupełniono
-na podstawie źródeł MEN. Odnośniki są w dokumentacji.
+W bazie jest 5 obszarów i 19 kwalifikacji.
 
 Materiały startowe:
 - 15 rekordów demonstracyjnych, bez fikcyjnych PDF-ów i adresów źródłowych;
@@ -19,7 +16,8 @@ Materiały startowe:
   MOT.05, MOT.06, TLO.01, TLO.03, SPL.02 i SPL.03;
 - 15 pasujących plików z zasadami oceniania;
 - 1 ZIP z materiałami do zadania INF.03.
-Pochodzenie: archiwum arkusze.pl. Rejestr plików i sumy SHA-256:
+Materiały pochodzą z archiwum arkusze.pl. Źródła poszczególnych arkuszy
+są zapisane w bazie i widoczne na stronach materiałów.
 To początkowy zasób, a nie komplet wszystkich sesji i kwalifikacji.
 Rzeczywiste arkusze teoretyczne i pozostałe materiały należy uzupełnić
 po sprawdzeniu ich dostępności, treści i źródła. Nowe kwalifikacje lotnicze
@@ -130,11 +128,7 @@ Ustaw dane połączenia i limity uploadu. Sprawdź zapis do uploads.
 Otwórz stronę, wyszukaj INF.03, pobierz PDF i zaloguj się do panelu.
 Żaden plik aplikacji nie wymaga stałej ścieżki typu C:\xampp.
 
-13. TESTY I DOKUMENTACJA
-Przed oddaniem otwórz stronę, wyszukaj INF.03, pobierz PDF i sprawdź logowanie administratora.
-
-14. PRZED ODDANIEM
-Uzupełnij w dokumentacji autorów i faktyczny podział pracy.
-Dodaj kolejne zweryfikowane materiały, zwłaszcza dla kwalifikacji bez plików.
-Zaprezentuj działanie lokalne, pobranie rzeczywistego PDF, wyszukiwanie i CRUD.
-Nie przedstawiaj demonstracyjnych rekordów jako prawdziwych arkuszy.
+13. SPRAWDZENIE INSTALACJI
+Otwórz stronę, wyszukaj INF.03 i pobierz PDF.
+Sprawdź logowanie administratora oraz dodawanie, edycję i usuwanie
+próbnego materiału oznaczonego jako dane przykładowe.
